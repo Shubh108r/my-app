@@ -6,4 +6,9 @@ stage('Compile-Package'){
  def mvnHome = tool name: 'Maven-3', type: 'maven'
 sh "${mvnHome}/bin/mvn clean package"
 }
+stage('mail'){
+mail bcc: '', body: '''hi,
+ i am a good teacher
+''', cc: '', from: '', replyTo: '', subject: '', to: 'devanshi24198@gmail.com'
+}
 }
